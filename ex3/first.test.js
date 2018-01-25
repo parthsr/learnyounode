@@ -1,6 +1,6 @@
 const read = require('./first');
 
-filelocation = 'file.txt';
+filelocation = '/Users/parthsrivastava/worknode/ex3/file.txt';
 
 describe('defining test case first ', () => {
   it('test case 1', () => {
