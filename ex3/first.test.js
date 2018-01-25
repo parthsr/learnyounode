@@ -1,6 +1,6 @@
 const read = require('./first');
 
-filelocation = './file.txt';
+filelocation = 'file.txt';
 
 describe('defining test case first ', () => {
   it('test case 1', () => {
