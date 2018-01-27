@@ -7,12 +7,18 @@ const callback = (err, data) => {
   dataarr = data.toString().split('\n');
   console.log(dataarr.length - 1);
 };
-
-const read = (filelocation) => {
+const check = (filelocation) => {
   if (filelocation === null || filelocation === undefined || !fs.existsSync(filelocation)) {
     return false;
   }
+  return true;
+};
+const read = (filelocation) => {
+  if (!check(filelocation)) {
+    return false;
+  }
   fs.readFile(filelocation, callback);
+  return true;
 };
 
 read(process.argv[2]);
