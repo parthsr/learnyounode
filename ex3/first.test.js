@@ -1,7 +1,6 @@
 const read = require('./first');
-const fs = require('fs');
 
-filelocation = '/Users/parthsrivastava/worknode/ex3/file.txt';
+filelocation = '/Users/parthsrivastava/worknode/ex/file.txt';
 describe('defining test case first ', () => {
   it('test case 1', () => {
     expect(read(filelocation)).toBe(5);
