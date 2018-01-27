@@ -7,6 +7,7 @@ module.exports = {
       "indent": [
           "error", 2, { "FunctionDeclaration": {"body": 1, "parameters": 2} }
       ],
-      "prefer-rest-params": 0
+      "prefer-rest-params": 0,
+      "consistent-return":0
   }
 };
