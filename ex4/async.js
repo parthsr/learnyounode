@@ -9,7 +9,12 @@ function callback(err, data) {
 }
 
 function read(filelocation) {
+  if (filelocation === null || filelocation === undefined) {
+    return false;
+  }
   fs.readFile(filelocation, callback);
 }
 
 read(process.argv[2]);
+
+module.exports = read;
