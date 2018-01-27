@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 function read(file) {
-  if (file === undefined || file === null) {
+  if (file === undefined || file === null || !fs.existsSync(file)) {
     return false;
   }
   let buffer = fs.readFileSync(file);
