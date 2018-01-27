@@ -1,6 +1,6 @@
 const read = require('./first');
 
-filelocation = '/Users/parthsrivastava/worknode/ex/file.txt';
+filelocation = '/Users/parthsrivastava/worknode/ex3/file.txt';
 describe('defining test case first ', () => {
   it('test case 1 use case', () => {
     expect(read(filelocation)).toBe(5);
@@ -16,5 +16,11 @@ describe('defining test case first ', () => {
   });
   it('test case 5 by passing spoof file location', () => {
     expect(read('sfsdsds')).toBe(false);
+  });
+  it('test case 5 by passing comsole.log functionalities file location', () => {
+    (console.log) = jest.fn();
+    read('/Users/parthsrivastava/worknode/ex3/file.txt');
+
+    expect(console.log).toHaveBeenCalledWith(5);
   });
 });
