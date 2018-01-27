@@ -11,4 +11,7 @@ describe('defining file path ', () => {
   it('test case 3 for undefined being passed', () => {
     expect(read(undefined)).toBe(false);
   });
+  it('test case 3 for wrong file being passed', () => {
+    expect(read('assdasdss')).toBe(false);
+  });
 });

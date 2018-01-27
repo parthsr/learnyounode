@@ -9,7 +9,7 @@ function callback(err, data) {
 }
 
 function read(filelocation) {
-  if (filelocation === null || filelocation === undefined) {
+  if (filelocation === null || filelocation === undefined || !fs.existsSync(filelocation)) {
     return false;
   }
   fs.readFile(filelocation, callback);
