@@ -5,4 +5,7 @@ describe('defining file path ', () => {
   it('test case 1 for null being passed', () => {
     expect(read(null)).toBe(false);
   });
+  it('test case 1 for null being passed', () => {
+    expect(read()).toBe(false);
+  });
 });
