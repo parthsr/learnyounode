@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const filecheck = (filepath) => {
-  if (filepath === undefined || filepath === null || !fs.existsSync(filepath)) {
+  if (filepath === undefined || filepath === null) {
     return false;
   }
   return true;
@@ -12,17 +12,37 @@ const validate = (fileext) => {
   }
   return true;
 };
+
+const pathValidtion = path => fs.existsSync(path, (exists) => {
+  if (exists) {
+    return true;
+  }
+  console.log('Err2: path not found');
+  return false;
+});
 const ls = (filepath, fileext) => {
+  if (!pathValidtion(filepath)) {
+    return false;
+  }
+  if (!filecheck(filepath)) {
+    return false;
+  }
+  if (!validate(fileext)) {
+    return false;
+  }
   const callback = (err, list) => {
     if (err) {
       console.log(err);
     }
     arr = [];
     list.map((element) => {
-      if (element.indexOf(fileext) > 0) {
+      if (element.endsWith(`.${fileext}`)) {
         arr.push(element);
       }
       return 0;
+    });
+    arr.forEach((element) => {
+      console.log(element);
     });
     return arr;
   };

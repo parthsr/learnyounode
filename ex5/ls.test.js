@@ -1,10 +1,6 @@
 const ls = require('./ls');
 
 describe('Use case testing', () => {
-  it('TEST CASE 1', () => {
-    expect(ls('/Users/parthsrivastava/worknode/ex3', 'txt')).toBe(['file.txt', 'file0.txt']);
-  });
-
   it('TEST CASE 2 passing empty file location', () => {
     expect(ls('', 'txt')).toBe(false);
   });
